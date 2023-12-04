@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/bassco/workflow-test/compare/v1.0.4...v1.0.5) (2023-12-04)
+
+
+### Bug Fixes
+
+* **workflow:** does the tag trigger a workflow now ([09e566c](https://github.com/bassco/workflow-test/commit/09e566c85b410af57c2b18ad1d13ae773a7d96a3))
+
 ## [1.0.4](https://github.com/bassco/workflow-test/compare/v1.0.3...v1.0.4) (2023-12-04)
 
 
