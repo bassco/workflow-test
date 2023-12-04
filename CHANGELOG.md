@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/bassco/workflow-test/compare/v1.0.2...v1.0.3) (2023-12-04)
+
+
+### Bug Fixes
+
+* pull tags during release workflow ([eff8a33](https://github.com/bassco/workflow-test/commit/eff8a33e94e9fe9329601238c88fea8ee1d5f1d0))
+* **workflow:** uses and run are mutually exclusive ([3d79d71](https://github.com/bassco/workflow-test/commit/3d79d71c5dafda85e82936b2b8691eb775aaf530))
+
 ## [1.0.2](https://github.com/bassco/workflow-test/compare/v1.0.1...v1.0.2) (2023-12-04)
 
 
