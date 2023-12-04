@@ -55,9 +55,15 @@ jobs:
       - get-next-version
       - release
     steps:
-      - uses: actions/checkout@v4
+      - name: checkout
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 2
+          fetch-tags: true
+        run: |
+          git rev-parse --short HEAD
+          git pull 
+          git rev-parse --short HEAD
 
       - name: Log in to the Container registry
         uses: docker/login-action@v3
@@ -80,5 +86,6 @@ jobs:
 
       - name: Show image metadata
         run: |
+          git rev-parse --short HEAD
           echo "tags: ${{ steps.meta.outputs.tags }}"
           echo "labels: ${{ steps.meta.outputs.labels }}"
