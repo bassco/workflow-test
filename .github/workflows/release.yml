@@ -36,7 +36,7 @@ jobs:
         id: semantic
         uses: cycjimmy/semantic-release-action@v4
         env:
-          GITHUB_TOKEN: ${{ secrets.SEM_REL_TOKEN }}
+          GH_TOKEN: ${{ secrets.SEM_REL_TOKEN }}
           GITHUB_USER: ${{ github.repository_owner }}
         with:
           semantic_version: 22.0.8

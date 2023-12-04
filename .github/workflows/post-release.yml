@@ -7,9 +7,8 @@ name: post-release
 
 on:
   push:
-    branches: ["main"]
     tags:
-      - v*.*.*
+      - "v[0-9]+.[0-9]+.[0-9]+" # Push events to matching v*, i.e. v1.0, v20.15.10
 
 permissions:
   checks: write
@@ -35,8 +34,11 @@ jobs:
 
       - name: checkout
         run: |
-          echo "event name is:" ${{ github.event_name }} 
-          echo "event type is:" ${{ github.event.action }} 
+          echo "github.ref is:" ${{ github.ref }}
+          echo "github.ref_name is:" ${{ github.ref_name }}
+          echo "github.workflow is:" ${{ github.workflow }}
+          echo "event name is:" ${{ github.event_name }}
+          echo "event type is:" ${{ github.event.metadata-action }}
           git rev-parse --short HEAD
           git pull 
           git rev-parse --short HEAD
