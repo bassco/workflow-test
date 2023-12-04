@@ -7,13 +7,17 @@ name: post-release
 
 on:
   push:
+    branches: ["main"]
     tags:
       - v*.*.*
+
+permissions:
+  checks: write
 
 # Only allow one release workflow to execute at a time, since each release
 # workflow uses shared resources (git tags, package registries)
 concurrency:
-  group: ${{ github.workflow }}
+  group: ${{ github.workflow }}-${{ github.ref }}
 
 env:
   REGISTRY: ghcr.io
@@ -31,6 +35,8 @@ jobs:
 
       - name: checkout
         run: |
+          echo "event name is:" ${{ github.event_name }} 
+          echo "event type is:" ${{ github.event.action }} 
           git rev-parse --short HEAD
           git pull 
           git rev-parse --short HEAD

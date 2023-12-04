@@ -22,8 +22,15 @@ jobs:
       - get-next-version
     steps:
       - uses: actions/checkout@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEM_REL_TOKEN }}
         with:
           fetch-depth: 0
+
+      - name: event status
+        run: |
+          echo "event name is:" ${{ github.event_name }} 
+          echo "event type is:" ${{ github.event.action }}
 
       - name: Semantic Release
         id: semantic
