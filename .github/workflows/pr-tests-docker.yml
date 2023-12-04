@@ -34,7 +34,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          context: git
+          context: workflow
           images: ${{ env.IMAGE_NAME }}
           tags: |
             type=ref,event=branch
