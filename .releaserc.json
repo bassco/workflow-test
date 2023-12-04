@@ -1,0 +1,38 @@
+{
+  "branches": [ "main" ],
+  "ci": false,
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "semantic-release-major-tag",
+      {
+        "customTags": ["v${major}", "v${major}.${minor}"]
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "successComment": "This ${issue.pull_request ? 'PR is included' : 'issue has been resolved'} in version ${nextRelease.version} :tada:",
+        "labels": false,
+        "releasedLabels": false,
+        "publish": true
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md"
+        ],
+        "message": "chore: Release ${nextRelease.version} [skip ci]"
+      }
+    ]
+  ]
+}

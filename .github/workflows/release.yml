@@ -1,0 +1,83 @@
+name: release
+
+on:
+  push:
+    branches:
+      - main
+
+# Only allow one release workflow to execute at a time, since each release
+# workflow uses shared resources (git tags, package registries)
+concurrency:
+  group: ${{ github.workflow }}
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}/dali
+
+jobs:
+  get-next-version:
+    uses: semantic-release-action/next-release-version/.github/workflows/next-release-version.yml@v4
+
+  release:
+    runs-on: ubuntu-latest
+    name: Release
+    if: needs.get-next-version.outputs.new-release-published == 'true'
+    needs:
+      - get-next-version
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Semantic Release
+        id: semantic
+        uses: cycjimmy/semantic-release-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: ${{ github.repository_owner }}
+        with:
+          semantic_version: 22.0.8
+          dry_run: false
+          extra_plugins: |
+            @commitlint/config-conventional@18.4.3
+            @semantic-release/changelog@v6.0.3
+            @semantic-release/commit-analyzer@11.1.0
+            @semantic-release/git@10.0.1
+            @semantic-release/github@9.2.3
+            @semantic-release/release-notes-generator@12.1.0
+            semantic-release-major-tag@0.3.2
+
+  docker:
+    runs-on: ubuntu-latest
+    name: Pretend To Publish Images
+    if: needs.get-next-version.outputs.new-release-published == 'true'
+    needs:
+      - get-next-version
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          context: git
+          flavor: latest=true
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/v0.') }}
+
+      - name: Show image metadata
+        run: |
+          echo "tags: ${{ steps.meta.outputs.tags }}"
+          echo "labels: ${{ steps.meta.outputs.labels }}"
