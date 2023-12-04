@@ -53,6 +53,7 @@ jobs:
     if: needs.get-next-version.outputs.new-release-published == 'true'
     needs:
       - get-next-version
+      - release
     steps:
       - uses: actions/checkout@v4
         with:
