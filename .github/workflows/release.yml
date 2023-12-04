@@ -55,11 +55,12 @@ jobs:
       - get-next-version
       - release
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 2
           fetch-tags: true
+
+      - name: checkout
         run: |
           git rev-parse --short HEAD
           git pull 
