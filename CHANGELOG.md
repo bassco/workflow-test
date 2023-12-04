@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/bassco/workflow-test/compare/v1.0.7...v1.0.8) (2023-12-04)
+
+
+### Bug Fixes
+
+* **workflow:** testing the trigger of post-release ([438ded6](https://github.com/bassco/workflow-test/commit/438ded636bf6447cf5d57b10143a94352a70906f))
+
 ## [1.0.7](https://github.com/bassco/workflow-test/compare/v1.0.6...v1.0.7) (2023-12-04)
 
 
