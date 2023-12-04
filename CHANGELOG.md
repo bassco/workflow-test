@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/bassco/workflow-test/compare/v1.0.3...v1.0.4) (2023-12-04)
+
+
+### Bug Fixes
+
+* **workflow:** use a scoped pat to trigger the docker workflow ([c30695c](https://github.com/bassco/workflow-test/commit/c30695c1f052664b9237a2183f5e1199324532c6))
+
 ## [1.0.3](https://github.com/bassco/workflow-test/compare/v1.0.2...v1.0.3) (2023-12-04)
 
 
