@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/bassco/workflow-test/compare/v1.0.5...v1.0.6) (2023-12-04)
+
+
+### Bug Fixes
+
+* **workflow:** changed the tag string evaluation ([c29462e](https://github.com/bassco/workflow-test/commit/c29462e1e17fd350337c79b684a2bea716d8a454))
+
 ## [1.0.5](https://github.com/bassco/workflow-test/compare/v1.0.4...v1.0.5) (2023-12-04)
 
 
