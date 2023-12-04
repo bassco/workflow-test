@@ -22,3 +22,5 @@ For 1.0.7 release...
 - added branches main to the push event
 - added event debugging statuses
 - added SEM_REL_TOKEN to the actions/checkout for release
+- change the semantic-release token to GH_TOKEN (even though it is using the PAT)
+- the ref in the actions for the post-release is `main` and not a tag :(
