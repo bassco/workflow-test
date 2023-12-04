@@ -13,4 +13,12 @@ The semantic-release workflow commit message is not triggering the tag workflow 
 The PAT changes were successful
 The trigger has still not triggered.....
 
-Changed the tags string
+Changed the tags string - did not trigger the post-release
+
+For 1.0.7 release...
+
+- PAT: Added Workflow read-write access
+- changed concurrency
+- added branches main to the push event
+- added event debugging statuses
+- added SEM_REL_TOKEN to the actions/checkout for release
