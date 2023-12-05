@@ -1,3 +1,10 @@
+## [1.0.14](https://github.com/bassco/workflow-test/compare/v1.0.13...v1.0.14) (2023-12-05)
+
+
+### Bug Fixes
+
+* remove skip notation from release commit ([5f0163d](https://github.com/bassco/workflow-test/commit/5f0163d28b1592296baece2c51704639c43bc780))
+
 ## [1.0.13](https://github.com/bassco/workflow-test/compare/v1.0.12...v1.0.13) (2023-12-05)
 
 
