@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/bassco/workflow-test/compare/v1.0.11...v1.0.12) (2023-12-05)
+
+
+### Bug Fixes
+
+* **workflow:** do not persist the checkout creds ([60732b4](https://github.com/bassco/workflow-test/commit/60732b49dabd5c23930f589d1508b7d070e205df))
+
 ## [1.0.11](https://github.com/bassco/workflow-test/compare/v1.0.10...v1.0.11) (2023-12-05)
 
 
