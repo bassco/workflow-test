@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/bassco/workflow-test/compare/v1.0.10...v1.0.11) (2023-12-05)
+
+
+### Bug Fixes
+
+* **workflow:** set commit env vars ([ed9de11](https://github.com/bassco/workflow-test/commit/ed9de1132a24f5601be402c58d4efc592b30afaf))
+
 ## [1.0.10](https://github.com/bassco/workflow-test/compare/v1.0.9...v1.0.10) (2023-12-05)
 
 
