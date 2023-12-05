@@ -24,3 +24,9 @@ For 1.0.7 release...
 - added SEM_REL_TOKEN to the actions/checkout for release
 - change the semantic-release token to GH_TOKEN (even though it is using the PAT)
 - the ref in the actions for the post-release is `main` and not a tag :(
+
+Manually deleting and pushing a tag works - but you may need to change the releases tag in the UI if you force-push. The workflow will have a stale reference.
+
+For 1.0.10
+
+Set GH_TOKEN and GITHUB_TOKEN env vars for the release workflow for semantic-release. We just need get the correct the correct token to use so that the workflow for post-release can be triggered with the correct auth mechanism.
