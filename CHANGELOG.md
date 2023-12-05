@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/bassco/workflow-test/compare/v1.0.8...v1.0.9) (2023-12-05)
+
+
+### Bug Fixes
+
+* **workflow:** did concurrency block the trigger of post-release ([513832f](https://github.com/bassco/workflow-test/commit/513832fa0a4e92eb10139ad5106d74301085738a))
+
 ## [1.0.8](https://github.com/bassco/workflow-test/compare/v1.0.7...v1.0.8) (2023-12-04)
 
 

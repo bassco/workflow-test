@@ -39,9 +39,6 @@ jobs:
           echo "github.workflow is:" ${{ github.workflow }}
           echo "event name is:" ${{ github.event_name }}
           echo "event type is:" ${{ github.event.metadata-action }}
-          git rev-parse --short HEAD
-          git pull 
-          git rev-parse --short HEAD
 
       - name: Docker meta
         id: meta
