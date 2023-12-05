@@ -30,3 +30,7 @@ Manually deleting and pushing a tag works - but you may need to change the relea
 For 1.0.10
 
 Set GH_TOKEN and GITHUB_TOKEN env vars for the release workflow for semantic-release. We just need get the correct the correct token to use so that the workflow for post-release can be triggered with the correct auth mechanism.
+
+Ok, so 1.0.12 was successful and the tag workflow for post-release did run! Finally.
+
+Now to test tif `[skip ci]` has any bearing on the behaviour in github.
