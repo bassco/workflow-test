@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/bassco/workflow-test/compare/v1.0.12...v1.0.13) (2023-12-05)
+
+
+### Bug Fixes
+
+* test skip ci commit message behaviour ([e0ee880](https://github.com/bassco/workflow-test/commit/e0ee88002033d947d384e66726cccd6618806a10))
+
 ## [1.0.12](https://github.com/bassco/workflow-test/compare/v1.0.11...v1.0.12) (2023-12-05)
 
 
