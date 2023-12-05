@@ -33,4 +33,7 @@ Set GH_TOKEN and GITHUB_TOKEN env vars for the release workflow for semantic-rel
 
 Ok, so 1.0.12 was successful and the tag workflow for post-release did run! Finally.
 
-Now to test tif `[skip ci]` has any bearing on the behaviour in github.
+Now to test if `[skip ci]` has any bearing on the behaviour in github.
+
+The workflow for tags for 1.0.13 did not run :(
+Reverting the change so that we have a good working example.
